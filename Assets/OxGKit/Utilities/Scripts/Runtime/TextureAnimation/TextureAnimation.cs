@@ -76,7 +76,7 @@ namespace OxGKit.Utilities.TextureAnim
         }
 #endif
 
-        private void OnEnable()
+        private void OnDisable()
         {
             this.ResetAnim();
         }
@@ -95,6 +95,7 @@ namespace OxGKit.Utilities.TextureAnim
         public void ResetAnim()
         {
             this._dt = 0;
+            this._spIdx = 0;
             this._pingPongCount = 0;
             if (this._playMode == PlayMode.PingPong) this._pingPongStart = true;
             else if (this._playMode == PlayMode.PingPongReverse) this._pingPongStart = false;
